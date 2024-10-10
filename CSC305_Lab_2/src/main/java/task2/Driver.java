@@ -2,7 +2,7 @@ package main.java.task2;
 
 import java.util.ArrayList;
 import java.util.List;
-import static main.java.task2.JSONParserJackson.parseJSONJackson;
+
 
 class Driver {
 
@@ -16,7 +16,7 @@ class Driver {
 
         for(String file : files){
             try {
-                personsJackson.add(parseJSONJackson(file));
+                personsJackson.add(JSONParserJackson.parseJSONJackson(file));
             } catch (Exception ex){
                 ex.printStackTrace();
             }

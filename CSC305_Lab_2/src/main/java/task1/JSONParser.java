@@ -7,7 +7,6 @@ import java.io.*;
 import org.apache.commons.io.IOUtils;
 
 class JSONParser {
-
     //private constructor to ensure no outer classes can create the object
     JSONParser(){
 

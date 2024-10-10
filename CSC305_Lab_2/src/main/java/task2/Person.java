@@ -2,7 +2,7 @@ package main.java.task2;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -13,13 +13,13 @@ class Person {
 
     Person(@JsonProperty("name") String name, @JsonProperty("awards") List<Award> awards, @JsonProperty("knownFor") List<String> knownFor){
         this.name = name;
-        this.awards = Collections.unmodifiableList(awards);
-        this.knownFor = Collections.unmodifiableList(knownFor);
+        this.awards = new ArrayList<>(awards);
+        this.knownFor = new ArrayList<>(knownFor);
     }
 
     private List<String> getAwardsAsStringList(){
-        return Collections.unmodifiableList(awards.stream()
-                .map(Award::toString).collect(Collectors.toList()));
+        return awards.stream()
+                .map(Award::toString).collect(Collectors.toList());
     }
 
     @Override

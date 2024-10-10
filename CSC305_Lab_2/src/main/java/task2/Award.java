@@ -1,10 +1,12 @@
-package main.java.task1;
+package main.java.task2;
+
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 class Award {
     private final String name;
     private final Integer year;
 
-    Award(String name, Integer year){
+    Award(@JsonProperty("name") String name, @JsonProperty("year") Integer year){
         this.name = name;
         this.year = year;
     }

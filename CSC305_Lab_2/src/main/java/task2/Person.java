@@ -1,6 +1,6 @@
-package main.java.task1;
+package main.java.task2;
 
-
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +11,7 @@ class Person {
     private final List<String> knownFor;
     private final String name;
 
-    Person(String name, List<Award> awards, List<String> knownFor){
+    Person(@JsonProperty("name") String name, @JsonProperty("awards") List<Award> awards, @JsonProperty("knownFor") List<String> knownFor){
         this.name = name;
         this.awards = Collections.unmodifiableList(awards);
         this.knownFor = Collections.unmodifiableList(knownFor);
